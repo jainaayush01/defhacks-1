@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react-dom";
 import Donor from "./Donor";
 const AllDonors = () => {
@@ -19,6 +19,15 @@ const AllDonors = () => {
             email: "KakashiHatake@gmail.com",
         },
     ]);
+
+    useEffect(() => {
+        const BACKEND_URL = "https://defhacks-backend.herokuapp.com/api/donor";
+        let res = fetch(BACKEND_URL)
+            .then((res) => res.json())
+            .then((res) => {
+                setDonors(res);
+            });
+    }, []);
 
     return (
         <div>
