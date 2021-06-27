@@ -5,7 +5,7 @@ const Header=()=>{
         <div>
         <Card className="my-2 bg-info">
             <CardBody>
-                <h1 className="text-center my-2">Covid Medicines Donation</h1>
+                <h1 className="text-center my-2">Covid Resource Donation</h1>
             </CardBody>
         </Card>
         </div>

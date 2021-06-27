@@ -1,8 +1,28 @@
 import React from "react-dom";
-import { Form, FormGroup, Input ,Container,Button} from "reactstrap";
+import { Form, FormGroup, Input, Container, Button } from "reactstrap";
+import useGeoLocation from "./GeoLocation";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const AddDonor = () => {
+  const location = useGeoLocation();
+  const submit = () =>
+  toast.success('Submitted Successfully.', {
+    progress: undefined,
+    });
+  const clear = ()=>toast.warning('Cleared!');
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <h2 className="text-center my-4">
         Fill in the details in order to donate
       </h2>
@@ -34,10 +54,30 @@ const AddDonor = () => {
             name="donorId"
             id="donorId"
           ></Input>
+          <label for="latitude">Latitude:</label>
+          <Input
+            type="text"
+            placeholder="Current Latitude"
+            value={location.coordinates.lat}
+            name="latitude"
+            id="latitude"
+          ></Input>
+          <label for="longitude">Longitude:</label>
+          <Input
+            type="text"
+            placeholder="Current Longitude"
+            value={location.coordinates.lng}
+            name="longitude"
+            id="longitude"
+          ></Input>
         </FormGroup>
         <Container className="text-center">
-          <Button color="success">Submit</Button>
-          <Button className="mx-4 my-5" color="warning">Clear All</Button>
+          <Button color="success" onClick={submit}>
+            Submit
+          </Button>
+          <Button className="mx-4 my-5" color="warning" onClick={clear}>
+            Clear All
+          </Button>
         </Container>
       </Form>
     </>

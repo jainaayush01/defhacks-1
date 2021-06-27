@@ -4,16 +4,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import Menus from "./Menus";
 import Home from "./Home";
-import AddDonor from './AddDonor'
-import AllDonors from './AllDonors'
-
+import About from './About';
+import AddDonor from './AddDonor';
+import AllDonors from './AllDonors';
+import Contact from './Contact'
 import Header from "./Header";
-import { ToastContainer, toast } from "react-toastify";
 function App() {
   return (
     <div>
       <Router>
-        <ToastContainer />
         <Container>
           <Header />
           <Row>
@@ -22,8 +21,10 @@ function App() {
             </Col>
             <Col md={8}>
               <Route path="/" component={Home} exact />
+              <Route path="/about-us" component={About} exact/>
               <Route path="/donate" component={AddDonor} exact />
               <Route path="/view-donors" component={AllDonors} exact />
+              <Route path="/contact-us" component={Contact} exact />
             </Col>
           </Row>
         </Container>
