@@ -7,7 +7,7 @@ const Header = () => {
             <Card className="my-2 bg-info">
                 <CardBody>
                     <h1 className="text-center my-2">
-                        Covid Resource Donation
+                        Helper on Maps
                     </h1>
                 </CardBody>
             </Card>
