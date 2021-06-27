@@ -22,7 +22,7 @@ function App() {
             apiKey: "6412accf-b00b-44e1-aec3-240d63bb63ed",
             onSuccess: (payload) => {
                 setPayload(payload);
-            },
+            }
         };
         let sawo = new Sawo(config);
         sawo.showForm();

@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Jumbotron className="text-center">
-                <h1 className="display-3">Covid Resource Donation</h1>
+                <h1 className="display-3">Helper on Maps</h1>
                 <p className="lead">
                     This is a Covid Resource Donation WebApp where people who
                     have gone thorugh covid-19 can donate their medicines to the
